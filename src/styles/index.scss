@@ -1,0 +1,33 @@
+* {
+  margin: 0 auto;
+}
+.app--main {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  h1 {
+    color: tomato;
+  }
+}
+
+.content--text {
+  display: flex;
+  justify-content: center;
+}
+
+.text--area {
+  background-color: #242424;
+  color: ivory;
+  width: 90%;
+  height: 200px;
+  resize: none;
+  border: 1px dotted black;
+  overflow-y: scroll;
+}
+.text--area::-webkit-scrollbar {
+  display: none;
+}
+.text--area {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}

@@ -1,0 +1,106 @@
+{
+  "name": "pgsql-gui-admin",
+  "version": "1.0.0",
+  "description": "postgresql admin gui built with electron",
+  "main": "./dist/main.bundle.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "electron ./dist/main.bundle.js",
+    "devStart": "electron ./main.js",
+    "clean": "rimraf dist/",
+    "watch": "yarn clean && cross-env NODE_ENV=development webpack  --watch --progress --colors",
+    "dev-main": "cross-env NODE_ENV=development webpack --colors && yarn start ",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js --hot",
+    "dev-con": "concurrently -k  \"yarn dev\"  ",
+    "postinstall": "electron-builder install-app-deps",
+    "eslint": "cross-env NODE_ENV=development eslint \"src/**/*.{js,jsx}\" ",
+    "lint:fix": "cross-env NODE_ENV=development eslint \"src/**/*.{js,jsx}\" --fix ",
+    "build:win": "electron-builder dist --win --ia32",
+    "build:mac": "electron-builder dist --mac --ia32",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.muhimron.pgsql_gui",
+    "productName": "PostgreSQL admin GUI",
+    "directories": {
+      "app": "./dist",
+      "output": "./out",
+      "buildResources": "resources"
+    },
+    "mac": {
+      "target": "pkg"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ],
+      "asar": false
+    },
+    "buildVersion": "1.0.0"
+  },
+  "extraResources": [
+    "./resources/**"
+  ],
+  "keywords": [
+    "electron",
+    "react",
+    "desktopApps"
+  ],
+  "author": "Muhamad Imron",
+  "license": "MIT",
+  "moduleFileExtensions": [
+    "js",
+    "jsx",
+    "json"
+  ],
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "chalk": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.3.0",
+    "copy-pkg-json-webpack-plugin": "^0.0.39",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.3.0",
+    "electron": "^10.1.3",
+    "electron-builder": "^22.8.1",
+    "electron-reload": "^1.5.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "lodash": "^4.17.20",
+    "react-hot-loader": "^4.13.0",
+    "react-refresh": "^0.8.3",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "wait-on": "^5.2.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@hot-loader/react-dom": "^17.0.0-rc.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "winston": "^3.3.3"
+  },
+  "optionalDependencies": {
+    "fsevents": "^1.2.4"
+  }
+}
