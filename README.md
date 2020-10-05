@@ -24,9 +24,7 @@
 
 ## Apps
 
-<div align="center">
-<img src="" alt="PG Logo" width="250">
-</div">
+![PG GUI Demo](resources/pg_admin.gif)
 
 ## NOTES
 
