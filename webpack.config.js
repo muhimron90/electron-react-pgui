@@ -22,6 +22,7 @@ const common = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+       
       },
       {
         test: [/\.s[ac]ss$/i, /\.css$/i],
@@ -44,6 +45,7 @@ const common = {
     ],
   },
   plugins: [
+    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
     !isProd && new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
   ].filter(Boolean),
@@ -51,7 +53,7 @@ const common = {
     alias: {
       'react-dom': '@hot-loader/react-dom',
     },
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    extensions: ['*', '.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   externals: {
     fsevents: "require('fsevents')",

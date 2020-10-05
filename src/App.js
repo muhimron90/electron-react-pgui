@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Open  from './scripts/openDir';
+
 import Button from './components/Button';
-import dataRaw from './datalog/infolog.json';
+import BoxMessage from './components/BoxMessage';
+import gitcmd from '../internals/commands/startserver';
 const App = () => {
  
   const [msg, setMsg] = useState(false);
-  const [info, setInfo] = useState(dataRaw.data);
+  const [info, setInfo] = useState('');
+  const [errMsg, setErrMsg] = useState('');
   const changeMe = () => {
     setMsg((prev) => !prev);
   };
@@ -13,6 +15,18 @@ const App = () => {
      setInfo('');
    };
 
+  const testgit = (status) => {
+    gitcmd(status)
+      .then((x) => {
+        if (x.length === 0) {
+          setInfo('try again');
+        }
+        setInfo(x);
+      })
+      .catch((err) => {
+        setInfo(err);
+      });
+  }
 
   return (
     <>
@@ -20,12 +34,13 @@ const App = () => {
         <h1>PostgreSQL Admin</h1>
       </div>
       <p>{msg ? 'Stop' : 'running'}</p>
-      <Button onPress={() => changeMe()} title="Restart" />
-      <Button onPress={() => Open()} title="open" />
-      <Button onPress={() => clear()} title="clear" />
+      <Button onPress={() => testgit('restart')} title="restart" />
+      <Button onPress={() => testgit('stop')} title="stop" />
+      <Button onPress={() => testgit('start')} title="start" />
+      <Button onPress={() => testgit('status')} title="Status" />
 
       <div className="content--text">
-        <textarea className="text--area" value={info} readOnly />
+        <BoxMessage textInfo={info} />
       </div>
     </>
   );

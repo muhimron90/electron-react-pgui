@@ -1,3 +1,4 @@
 /dist/**
 /webpack.config.js
 /README.md
+coverage/

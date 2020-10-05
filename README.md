@@ -1,18 +1,13 @@
 <div align="center">
 <img src="https://raw.githubusercontent.com/muhimron90/electron-react-pgui/main/resources/256x256.png" alt="PG Logo" width="150" height="150">
-<div">
+<div>
 <h2 style="text-align:center;">PostgreSQL GUI</h2>
 <p style="text-align:center;"><b>I'm a Windows User who love play with my cursor!</b><p>
 <div>
 <p>Does CLI make life easier?.</p>
-<b style="color: #fff;
-text-transform: uppercase;
-text-decoration: none;
-background: #e67e22;
-padding: 10px;
-border-radius: 5px;
-display: inline-block;
-border: none;">NO</b>
+<div style="color: #e67e22;">
+<b>NO</b>
+</div>
 </div>
 </div>
 </div>
@@ -27,6 +22,27 @@ border: none;">NO</b>
 
 ---
 
+## Apps
+
+<div align="center">
+<img src="" alt="PG Logo" width="250">
+</div">
+
 ## NOTES
 
-[75%...]
+#### to do
+
+- [x] plan,analysis,.. [continues..]
+- [x] add command start|stop|restart|status
+- [ ] kill server
+- [x] create logs
+- [ ] delay process start|stop|status|restart
+- [ ] Design UI & styling
+- [ ] update Info Message
+- [ ] manage state
+- [ ] testing
+- [ ] optimize
+- [ ] pages gh
+- [x] documentation [5%]
+- [ ] adding support files or configuration
+- [ ] bugs, issue
