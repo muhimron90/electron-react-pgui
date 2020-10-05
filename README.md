@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/muhimron90/electron-react-pgui/main/resources/256x256.png" alt="PG Logo" width="150" height="150">
+<img src="https://raw.githubusercontent.com/muhimron90/electron-react-pgui/main/resources/icon.png" alt="PG Logo" width="150" height="150">
 <div>
 <h2 style="text-align:center;">PostgreSQL GUI</h2>
 <p style="text-align:center;"><b>I'm a Windows User who love play with my cursor!</b><p>
